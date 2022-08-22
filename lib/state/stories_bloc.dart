@@ -52,6 +52,9 @@ class StoriesCubit extends Cubit<StoriesState> {
   int _curPageNumber = 0;
   late ColorTween _curBackgroundTween = ColorTween(begin: Color(_stories.first.backgroundColor), end: Color(_stories.first.backgroundColor));
   late PercentNotifier storyPercentNotifier = PercentNotifier(0, onNext: onNext);
+  ValueNotifier<bool?> isLiked = ValueNotifier(null);
+
+  Map<int, bool> likesMap = <int, bool>{};
 
   void onPrevious() async {
     if (_curPageNumber != 0) {                        
@@ -83,12 +86,32 @@ class StoriesCubit extends Cubit<StoriesState> {
     storyPercentNotifier.timerStart();
   }
 
+  void onLike() {
+    likesMap[_curPageNumber] = true;
+    isLiked.value = true;
+    onNext();
+  }
+
+  void onDislike() {
+    likesMap[_curPageNumber] = false;
+    isLiked.value = false;
+    onNext();
+  }
+
   double getStoryLoadingPercent(int pageNumber, double percent) {
     return (pageNumber < _curPageNumber)
       ? 1
       : (pageNumber > _curPageNumber)
           ? 0
           : percent;
+  }
+
+  void getLikeValue() {
+    if (likesMap.containsKey(_curPageNumber)) {
+      isLiked.value = likesMap[_curPageNumber];
+    } else {
+      isLiked.value = null;
+    }
   }
 
   @override
