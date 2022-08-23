@@ -1,0 +1,39 @@
+{
+    "stories": [
+        {
+            "backgroundColor": "0xFF99D2FF",
+            "fakeImgUrl": "assets/img/star.png",
+            "title": "Нам важно ваше мнение! Оцените изменения в Simpler",
+            "subtitle": "",
+            "containsButtons": false
+        },
+        {
+            "backgroundColor": "0xFF19191B",
+            "fakeImgUrl": "assets/img/dark_theme.png",
+            "title": "Включите тёмную тему",
+            "subtitle": "Занимайтесь английским даже ночью или просто посмотрите как изменится ваш интерфейс!",
+            "containsButtons": true
+        },
+        {
+            "backgroundColor": "0xFFFF9B04",
+            "fakeImgUrl": "assets/img/competition.png",
+            "title": "Соревнуйтесь в рейтинге космонавтов",
+            "subtitle": "Зарабатывайте очки и продвигайтесь к вершине! Займите место в ракете и изучите новые созвездия",
+            "containsButtons": true
+        },
+        {
+            "backgroundColor": "0xFFF85153",
+            "fakeImgUrl": "assets/img/solve_crime.png",
+            "title": "Раскройте преступления и станьте комиссаром",
+            "subtitle": "Обновлённые детективные истории дают вам новый опыт в расследовании детективных дел",
+            "containsButtons": true
+        },
+        {
+            "backgroundColor": "0xFF44CD6E",
+            "fakeImgUrl": "assets/img/new_tasks.png",
+            "title": "Тренируйте язык с помощью новых заданий",
+            "subtitle": "Чем больше уроков вы пройдёте, тем больше уникальных заданий станет доступно для тренировки ваших навыков",
+            "containsButtons": true
+        }
+    ]
+}
