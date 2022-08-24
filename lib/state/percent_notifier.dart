@@ -12,6 +12,12 @@ class PercentNotifier extends ValueNotifier<double> {
     timerStart();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    timerStop();
+  }
+
   void timerStart() {
     _timer = Timer.periodic(
       const Duration(

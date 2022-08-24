@@ -16,8 +16,7 @@ class StoriesCubit extends Cubit<StoriesState> {
   int get storiesCount => _stories.length;
 
   // UI single items notifiers
-  late PercentNotifier storyPercentNotifier =
-    PercentNotifier(0, onNext: onNext);
+  late PercentNotifier storyPercentNotifier = PercentNotifier(0, onNext: onNext);
   ValueNotifier<bool?> isLikedNotifier = ValueNotifier(null);
 
   late List<StoryData> _stories;
@@ -37,6 +36,7 @@ class StoriesCubit extends Cubit<StoriesState> {
   @override
   Future<void> close() {
     storyPercentNotifier.dispose();
+    isLikedNotifier.dispose();
     return super.close();
   }
 
@@ -111,4 +111,3 @@ class StoriesCubit extends Cubit<StoriesState> {
     }    
   }
 }
-
